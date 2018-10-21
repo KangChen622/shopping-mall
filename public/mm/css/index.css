@@ -1,0 +1,96 @@
+html {
+  background-color: #fff;
+}
+.mui-content {
+  overflow: hidden;
+  background-color: #fff;
+}
+.nav-links {
+  overflow: hidden;
+  padding: 10px;
+}
+.nav-links a {
+  display: block;
+  width: 33.33%;
+  float: left;
+}
+.nav-links a img {
+  display: block;
+  width: 100%;
+}
+.brand {
+  margin: 10px 0;
+}
+.brand > img {
+  width: 100%;
+  padding-bottom: 10px;
+}
+.brand ul {
+  overflow: hidden;
+}
+.brand ul li {
+  width: 25%;
+  float: left;
+  list-style: none;
+}
+.brand ul li a {
+  width: 100%;
+  display: block;
+}
+.brand ul li a img {
+  display: block;
+  width: 100%;
+}
+.sports > img {
+  width: 100%;
+  display: block;
+}
+.sports > ul {
+  padding: 10px 10px 20px 10px;
+  width: 100%;
+  overflow: hidden;
+}
+.sports > ul li {
+  width: 50%;
+  float: left;
+  padding: 5px;
+}
+.sports > ul li a {
+  text-align: center;
+  color: black;
+  display: block;
+  padding: 5px;
+  width: 100%;
+  box-shadow: 0 0 5px #ccc;
+}
+.sports > ul li a img {
+  width: 100%;
+}
+.sports > ul li a > span {
+  overflow: hidden;
+  text-align: center;
+  color: #ccc;
+  font-size: 12PX;
+}
+.sports > ul li a > p {
+  text-align: center;
+}
+.sports > ul li a > p > span:first-child {
+  padding-right: 10px;
+  color: #e92324;
+}
+.sports > ul li a > p > span:last-child {
+  text-decoration: line-through;
+}
+.sports > ul li a .buynow {
+  color: #fff;
+  display: block;
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  border-radius: 10px;
+  margin: 0 auto 5px;
+  background: linear-gradient(to bottom right, white, red);
+}
