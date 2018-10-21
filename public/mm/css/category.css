@@ -1,0 +1,25 @@
+.mui-content {
+  position: absolute;
+  left: 0;
+  top: 44px;
+  bottom: 50px;
+  width: 100%;
+  background: #f5f5f5;
+  padding: 0!important;
+}
+.mui-content .con-left,
+.mui-content .con-right {
+  height: 100%;
+  position: relative;
+}
+.mui-content .con-left {
+  width: 80px;
+  float: left;
+  background-color: pink;
+  position: relative;
+}
+.mui-content .con-right {
+  margin-left: 80px;
+  background-color: yellow;
+  position: relative;
+}
