@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./assets/mui/css/mui.css">
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/category.css">
-    <script src="./assets/zepto/zepto.min.js"></script>
-    <!-- <script src="./assets/artTemplate/template-web.js"></script> -->
-    <script src="./assets/artTemplate/template-native.js"></script>
-    <script src="./js/category.js"></script>
+    <link rel="stylesheet" href="./css/search.css">
 
+    <script src="./assets/zepto/zepto.min.js"></script>
     <script src="./assets/mui/js/mui.min.js"></script>
+    <script src="./assets/artTemplate/template-native.js"></script>
+    <script src="./js/search.js"></script>
 
 </head>
 
@@ -42,58 +41,27 @@
             <span class="mui-tab-label">会员中心</span>
         </a>
     </nav>
-
     <div class="mui-content">
-
-        <div class="con-left">
-            <div class="mui-scroll-wrapper">
-                <div class="mui-scroll">
-                    <div class="links" id="links">
-
-                    </div>
-                </div>
+        <div class="container">
+            <div class="search">
+                <input type="text" placeholder="搜索您喜欢的商品">
+                <input type="button" value="搜索" id="search-btn">
             </div>
-
-        </div>
-        <div class="con-right">
-            <div class="mui-scroll-wrapper">
-                <div class="mui-scroll">
-                    <ul class="brand-list">
-                    </ul>
-                </div>
+            <div class="history-top">
+                <span class="title mui-pull-left">搜索历史</span>
+                <span class="clear mui-pull-right mui-icon mui-icon-trash" id="clearBtn">清空历史</span>
             </div>
+            <!-- 运用插件 给与模板本身自带类名,附加样式 -->
+            <ul class="mui-table-view" id="history-box"></ul>
+
         </div>
     </div>
-
-
-    <script id="category-first" type="text/template">
-        <% for(var i=0;i<result.length;i++){ %>
-                <a
-                    href="javascript:;"
-                    data-id="<%=result[i].id %>"><%=result[i].categoryName %></a>
-            <% } %>
-        </script>
-
-
-    <script id="category-second" type="text/template">
-        <% for(var i=0;i<rows.length;i++){ %>
-            <li>
-                <a href="javascript:;">
-                    <img src="<%=rows[i].brandLogo %>" alt="">
-                    <p><%=rows[i].brandName%></p>
-                </a>
-            </li>
+    <!-- 运用模板，动态生成历史记录 -->
+    <script id="historyTpl" type="text/template">
+    <% for(var i=0;i<result.length;i++) { %>
+        <li class="mui-table-view-cell"><%=result[i] %></li>
         <% } %>
-        <% if(!rows.length){ %>
-			<div class="noresult">暂无数据</div>
-		<% } %>
-        </script>
-    <script>
-        mui('.my-footer').on('tap', 'a', function () {
-            window.top.location.href = this.href;
-        });
     </script>
-
 </body>
 
 </html>
