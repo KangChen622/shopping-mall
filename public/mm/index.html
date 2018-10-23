@@ -152,6 +152,9 @@
 		mui(".mui-slider").slider({
 			interval: 2000
 		});
+		mui('.my-footer').on('tap','a',function(){
+    window.top.location.href=this.href;
+});
 	</script>
 </body>
 
