@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="./css/search-result.css">
     <script src="./assets/zepto/zepto.min.js"></script>
     <script src="./assets/mui/js/mui.min.js"></script>
+    <script src="./assets/artTemplate/template-native.js"></script>
+    <script src="./js/public.js"></script>
+    <script src="./js/search-result.js"></script>
 
 </head>
 
@@ -39,22 +42,43 @@
         </a>
     </nav>
 
-    <div class="mui-content">
-        <div class="mui-row filter">
-            <div class="mui-col-xs-6" id="priceSort">
-                价格
-                <span class="mui-icon mui-icon-arrowdown"></span>
+    <div id="refreshContainer">
+        <div>
+            <div class="mui-row filter">
+                <div class="mui-col-xs-6" id="priceSort">
+                    价格
+                    <span class="mui-icon mui-icon-arrowdown"></span>
+                </div>
+                <div class="mui-col-xs-6">
+                    销量
+                    <span class="mui-icon mui-icon-arrowdown"></span>
+                </div>
             </div>
-            <div class="mui-col-xs-6">
-                销量
-                <span class="mui-icon mui-icon-arrowdown"></span>
+            <div class="sports">
+                <ul class="mui-clearfix" id="search-box">
+                </ul>
             </div>
         </div>
     </div>
-    <div class="sports">
-        <ul class="mui-clearfix" id="search-box">
-        </ul>
-    </div>
+
+    <!-- 动态展示商品详情 -->
+    <script id="searchTpl" type="text/template">
+        <% for(var i=0;i<data.length;i++){ %>
+			<li>
+				<a href="detail.html?id=<%=data[i].id %>">
+					<img src="<%=data[i].pic[0].picAddr %>">
+					<span class="name">
+						<%=data[i].proName %>
+					</span>
+					<p>
+						<span>¥<%=data[i].price %></span>
+						<span>¥<%=data[i].oldPrice %></span>
+					</p>
+					<span class="buy-now">立即购买</span>
+				</a>
+			</li>
+		<% } %>
+	</script>
 
 
 
