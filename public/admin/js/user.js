@@ -1,56 +1,35 @@
-$(function(){
-
+$(function () { 
+	// 调用接口展示 相关信息
 	$.ajax({
-		url:'/user/queryUser',
-		type:'get',
-		data:{
-			page:1,
-			pageSize:10
+		type: "get",
+		url: "/user/queryUser",
+		data: {
+			page:1,   //页数
+			pageSize:10 //每页数量
 		},
-		success:function(result){
-
-			console.log(result)
-
-			$('#userBox').html(template('userTpl',{data:result}));
-
+		success: function (result) {
+			$("#userBox").html(template("userTpl",{data:result}));
 		}
 	});
-
-
-	$('body').on('click','#deleteBtn',function(){
-
-		var id = $(this).attr('data-id');
-		var isDelete = Number($(this).attr('data-isDelete')) ? 0 : 1;
-
-		alert(isDelete)
-
+	$("body").on("click","#deleteBtn",function () {
+		var id=$(this).data("id");
+		var isDelete=parseInt($(this).data("isDelete"));
+		console.log(isDelete);
 		$.ajax({
-			url:'/user/updateUser',
+			url:"/user/updateUser",
 			type:'post',
 			data:{
 				id:id,
-				isDelete:isDelete
+				// 1 是启用 0 是禁用  点击取反
+				isDelete:isDelete?0:1
 			},
-			success:function(result){
-
-				if(result.success){
-
-					location.reload()
-
-				}else{
-
-					if(result.error){
-
-						alert(result.message);
-
-					}
-
+			success:function (res) { 
+				console.log(isDelete);
+				if(res.success){
+					// 页面重加载
+					location.reload();
 				}
-
-			}
+			 }
 		})
-
-	});
-
-
-});
+	  })
+ })

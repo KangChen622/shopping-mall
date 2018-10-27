@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>乐淘-用户管理</title>
+	<title>超级商城-用户管理</title>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/system.css">
@@ -19,7 +19,7 @@
 				<div class="avatar img-circle">
 					<img src="images/my_logo.jpg">
 				</div>
-				<h4>张学友</h4>
+				<h4>RNG</h4>
 			</div>
 			<div class="navs">
 				<ul class="list-unstyled">
@@ -88,11 +88,11 @@
 			<tr>
 				<td><%=data.rows[i].username %></td>
 				<td><%=data.rows[i].mobile %></td>
-				<td>已启用</td>
+				<td><%=data.rows[i].isDelete ? '已启用' :'已禁用'  %></td>
 				<td>
 					<button 
 					data-id="<%=data.rows[i].id%>"
-					data-isDelete="<%=data.rows[i].isDelete %>"
+					data-is-delete="<%=data.rows[i].isDelete %>"
 					type="button"
 					id="deleteBtn"
 					class="btn <%=data.rows[i].isDelete ? 'btn-danger' : 'btn-success' %>"><%=data.rows[i].isDelete ? '禁用' : '启用' %></button>
@@ -100,5 +100,7 @@
 			</tr>
 		<% } %>
 	</script>
+<!-- 动态生成用户名 电话 -->
+<!-- 状态 存储id 以及当前的状态 发送接口要更改  1表示启用    样式内容与当前状态取反 -->
 </body>
 </html>

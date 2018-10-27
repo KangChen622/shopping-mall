@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>乐淘-商品管理</title>
+	<title>超级商城-商品管理</title>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/system.css">
@@ -100,7 +100,7 @@
 					</div>
 				
 					<div class="form-group">
-						<input type="file" class="form-control" id="fileUpload" data-url="/category/addSecondCategoryPic" name="file" accept="image/jpeg">
+						<input type="file" multiple class="form-control" id="fileUpload" data-url="/category/addSecondCategoryPic" name="file" accept="image/jpeg">
 					</div>
 					<img src="images/brand6.png" class="img-thumbnail" id="showBrand">
 				</div>
@@ -111,7 +111,7 @@
 			</div>
 		</div>
 	</div>
-	
+	<!-- 二级分类数据展示 -->
 	<script id="categoryTpl" type="text/html">
 		<tr>
 			<th>品牌编号</th>
@@ -130,7 +130,7 @@
 		</tr>
 		<% } %>
 	</script>
-
+	<!-- 遍历一级分类 -->
 	<script id="firstCategoryTpl" type="text/html">
 		<select class="form-control" id="categoryId">
 			<option value="-1">-- 请选择 --</option>
